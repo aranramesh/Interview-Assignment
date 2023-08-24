@@ -27,76 +27,7 @@
     left: 0;
     transform: scale(0);
     z-index: 1;
-    &.one {
-      transform: scaleY(0.01) scaleX(0);
-      animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      .modal-background {
-        .modal {
-          transform: scale(0);
-          animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-      }
-      &.out {
-        transform: scale(1);
-        animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        .modal-background {
-          .modal {
-            animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          }
-        }
-      }
-    }
-    &.two {
-      transform: scale(1);
-      .modal-background {
-        background: rgba(0, 0, 0, 0);
-        animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        .modal {
-          opacity: 0;
-          animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-      }
-      + .content {
-        animation: scaleBack 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      }
-      &.out {
-        animation: quickScaleDown 0s 0.5s linear forwards;
-        .modal-background {
-          animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          .modal {
-            animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          }
-        }
-        + .content {
-          animation: scaleForward 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-      }
-    }
-    &.three {
-      z-index: 0;
-      transform: scale(1);
-      .modal-background {
-        background: rgba(0, 0, 0, 0.6);
-        .modal {
-          animation: moveUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-      }
-      + .content {
-        z-index: 1;
-        animation: slideUpLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      }
-      &.out {
-        .modal-background {
-          .modal {
-            animation: moveDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          }
-        }
-        + .content {
-          animation: slideDownLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
-            forwards;
-        }
-      }
-    }
+    
     &.four {
       z-index: 0;
       transform: scale(1);
@@ -123,51 +54,8 @@
         }
       }
     }
-    &.five {
-      transform: scale(1);
-      .modal-background {
-        background: rgba(0, 0, 0, 0);
-        animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        .modal {
-          transform: translateX(-1500px);
-          animation: roadRunnerIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-      }
-      &.out {
-        animation: quickScaleDown 0s 0.5s linear forwards;
-        .modal-background {
-          animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          .modal {
-            animation: roadRunnerOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
-              forwards;
-          }
-        }
-      }
-    }
-    &.six {
-      transform: scale(1);
-      .modal-background {
-        background: rgba(0, 0, 0, 0);
-        animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        .modal {
-          background-color: transparent;
-          animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
-            forwards;
-          h2,
-          p {
-            opacity: 0;
-            position: relative;
-            animation: modalContentFadeIn 0.5s 1s
-              cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-          }
-          .modal-svg {
-            rect {
-              animation: sketchIn 0.5s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)
-                forwards;
-            }
-          }
-        }
-      }
+  
+   
       &.out {
         animation: quickScaleDown 0s 0.5s linear forwards;
         .modal-background {
@@ -266,7 +154,7 @@
         }
       }
     }
-  }
+  
   
   .content {
     min-height: 100%;
@@ -578,59 +466,3 @@
       top: -20px;
     }
   }
-  
-  @keyframes bondJamesBond {
-    0% {
-      transform: translateX(1000px);
-    }
-    80% {
-      transform: translateX(0px);
-      border-radius: 75px;
-      height: 75px;
-      width: 75px;
-    }
-    90% {
-      border-radius: 3px;
-      height: 182px;
-      width: 247px;
-    }
-    100% {
-      border-radius: 3px;
-      height: 162px;
-      width: 227px;
-    }
-  }
-  
-  @keyframes killShot {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(300px) rotate(45deg);
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fadeToRed {
-    0% {
-      background-color: rgba(black, 0.6);
-    }
-    100% {
-      background-color: rgba(red, 0.8);
-    }
-  }
-  
-  @keyframes slowFade {
-    0% {
-      opacity: 1;
-    }
-    99.9% {
-      opacity: 0;
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  
