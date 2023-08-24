@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        #modal-container {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Add a semi-transparent background */
+        }
+
+        .modal-background {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            border: solid 1x #fff;
+            width: 50%;
+        }
+
+        .secondmodal {
+            background-color: white;
+            width: 50%;
+            height: 100vh;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .buttons::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Adjust opacity as needed */
+            filter: blur(10px);
+            /* Adjust the blur intensity as needed */
+            z-index: -1;
+        }
+
+        .Segmenttitle {
+            background-color: #39AEBD;
+            padding: 9px;
+            color: #fff;
+        }
+
+        .Segmenttitle i {
+            color: black;
+            font-size: 16px;
+
+        }
+
+        .Segmenttitles {
+            padding: 20px;
+        }
+
+        .Segmenttitles P {
+            /* padding: 10px; */
+        }
+
+        .Segmenttitles input {
+            height: 42px;
+            width: 70%;
+            padding: 10px;
+        }
+
+        .User-Traits {
+            padding: 10px;
+        }
+
+        .Group-Traits {
+            padding: 10px;
+        }
+
+        .User-Traits i {
+            color: green;
+        }
+
+        .Group-Traits i {
+            color: red;
+        }
+      .selectedsegment select{
+        width: 70%;
+        height: 42px;
+        
+      }
+      .schemas .schema {
+        margin-bottom: 10px; /* Add margin to create space between dropdowns */
+    }
+    .schemas .schema i{
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    color: #fff;
+    background: #39AEBD;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="modal-container">
+        <div class="modal-background">
+            <!-- <div class="modal">
+           <h3>Save Segment</h3>
+          
+          </div> -->
+        </div>
+
+        <div class="secondmodal">
+            <div class="Segmenttitle" id="Segmenttitle">
+                <h3>     <a href=""> <i class='bx bx-chevron-left'></i></a>    
+                    Save Segment</h3>
+            </div>
+            <div class="Segmenttitles">
+                <p>Enter the Name of the Segment</p>
+                <input value="segment_name" type="text" placeholder="Name of the Segment">
+                <p>To save you segment ,you need to add the schemas to build the query</p>
+
+                <div class="user" style="display: flex;justify-content: flex-end;">
+                   
+                    <div class="User-Traits">
+                        <p><i class='bx bxs-circle'></i>-User-Traits</p>
+                    </div>
+                    <div class="Group-Traits">
+                        <p><i class='bx bxs-circle'></i>-Group-Traits</p>
+                    </div>
+                </div>
+
+                <div class="selectedsegment">
+
+                    <div class="schemas">
+                        <!-- Newly added schemas will appear here -->
+                    </div>
+                    <select name="cars" id="selectedsegments">
+                        <option value="first_name">First Name</option>
+                        <option value="last_name">Last Name</option>
+                        <option value="gender">Gender</option>
+                        <option value="age">Age</option>
+                        <option value="account_name">Account Name</option>
+                        <option value="city">City</option>
+                        <option value="state">State</option>
+                    </select>
+                    <p><a href="#" id="addSchemaLink">Add new Schema +</a></p>
+                </div>
+                <div class="footer" style="position: fixed; bottom: 0; left: 50%; right: 0; display: flex; justify-content: flex-start; background-color: lightgrey; padding: 10px;">
+                    <div><button id="save" style="color: #fff; padding: 10px;background-color: #41B493;border: none;">Save Segment</button></div>
+                    <div><button style="padding: 8px;margin-left: 20px;"><a href="#">Cancel</a></button></div>
+                </div>
+                
+               
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="buttons">
+            <div id="four" class="button">
+                <button style="border: solid 1px #fff;background-color: inherit;padding: 15px;">Save Segment</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
